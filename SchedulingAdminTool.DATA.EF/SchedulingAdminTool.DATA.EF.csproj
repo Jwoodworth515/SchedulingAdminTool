@@ -50,7 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Course.cs">
       <DependentUpon>SchedulingAdminTool.tt</DependentUpon>
     </Compile>
@@ -79,6 +78,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SchedulingAdminTool.edmx</DependentUpon>
     </Compile>
+    <Compile Include="SchedulingAdminToolMetadata\SchedulingAdminToolMetadata.cs" />
     <Compile Include="Student.cs">
       <DependentUpon>SchedulingAdminTool.tt</DependentUpon>
     </Compile>
