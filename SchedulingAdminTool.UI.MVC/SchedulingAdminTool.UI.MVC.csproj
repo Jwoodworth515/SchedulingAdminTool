@@ -258,6 +258,7 @@
     <Content Include="Scripts\js\vendor\jquery-1.11.2.min.js" />
     <Content Include="Scripts\js\vendor\modernizr-2.8.3-respond-1.4.2.min.js" />
     <Content Include="Scripts\js\vendor\npm.js" />
+    <Content Include="strange-video.mp4" />
     <Content Include="_Archive\about.html" />
     <Content Include="_Archive\blog.html" />
     <Content Include="_Archive\css\bootstrap-theme.css" />
