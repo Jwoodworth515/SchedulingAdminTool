@@ -249,8 +249,6 @@
     <Content Include="Content\img\service_6.png" />
     <Content Include="fonts\fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="highway-loop.mp4" />
-    <Content Include="Sample Videos 2.mp4" />
     <Content Include="Scripts\js\main.js" />
     <Content Include="Scripts\js\plugins.js" />
     <Content Include="Scripts\js\vendor\bootstrap.js" />
