@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchedulingAdminTool.DATA.EF
+namespace SchedulingAdminTool.DATA.EF/*.SchedulingAdminToolMetadata*/
 {
-    public class Class1
+    class SchedulingAdminToolMetadata
     {
     }
 }
