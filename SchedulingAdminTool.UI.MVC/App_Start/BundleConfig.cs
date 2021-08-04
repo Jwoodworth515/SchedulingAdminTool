@@ -24,7 +24,20 @@ namespace SchedulingAdminTool.UI.MVC
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/css/bootstrap.min.css",
+                      "~/Content/css/bootstrap-theme.min.css",
+                      "~/Content/css/fontAwesome.css",
+                      "~/Content/css/light-box.css",
+                      "~/Content/css/templatemo-style.css"));
+
+
+            bundles.Add(new ScriptBundle("~/bundles/template").Include(
+                "~/Scripts/js/main.js",
+                "~/Scripts/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js",
+                "~/Scripts/js/vendor/bootstrap.min.js",
+                "~/Scripts/js/plugins.js"));
+
         }
     }
 }
