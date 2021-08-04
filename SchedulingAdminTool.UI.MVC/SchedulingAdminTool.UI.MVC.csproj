@@ -247,7 +247,10 @@
     <Content Include="Content\img\service_4.png" />
     <Content Include="Content\img\service_5.png" />
     <Content Include="Content\img\service_6.png" />
+    <Content Include="fonts\fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="highway-loop.mp4" />
+    <Content Include="Sample Videos 2.mp4" />
     <Content Include="Scripts\js\main.js" />
     <Content Include="Scripts\js\plugins.js" />
     <Content Include="Scripts\js\vendor\bootstrap.js" />
@@ -358,6 +361,14 @@
     <Content Include="Content\css\fonts\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\css\fonts\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="prepros-6.config" />
+    <Content Include="fonts\fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fonts\FontAwesome.otf" />
+    <Content Include="fonts\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
