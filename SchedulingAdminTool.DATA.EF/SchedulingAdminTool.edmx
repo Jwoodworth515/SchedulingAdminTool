@@ -198,7 +198,7 @@
           <Property Name="InstructorName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Location" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="SCSID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Cours" Relationship="Self.FK_ScheduledClasses_Courses" FromRole="ScheduledClasses" ToRole="Courses" />
+          <NavigationProperty Name="Course" Relationship="Self.FK_ScheduledClasses_Courses" FromRole="ScheduledClasses" ToRole="Courses" />
           <NavigationProperty Name="Enrollments" Relationship="Self.FK_Enrollments_ScheduledClasses" FromRole="ScheduledClasses" ToRole="Enrollments" />
           <NavigationProperty Name="ScheduledClassStatus" Relationship="Self.FK_ScheduledClasses_ScheduledClassStatuses" FromRole="ScheduledClasses" ToRole="ScheduledClassStatuses" />
         </EntityType>
