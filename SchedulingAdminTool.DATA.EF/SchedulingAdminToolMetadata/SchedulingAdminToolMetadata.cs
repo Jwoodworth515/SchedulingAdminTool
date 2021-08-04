@@ -88,10 +88,12 @@ namespace SchedulingAdminTool.DATA.EF/*.SchedulingAdminToolMetadata*/
 
             [Required(ErrorMessage = "Start Date is required")]
             [Display(Name = "Start Date")]
+            [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
             public System.DateTime StartDate { get; set; }
 
             [Required(ErrorMessage = "End Date is required")]
             [Display(Name = "End Date")]
+            [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
             public System.DateTime EndDate { get; set; }
 
             [Required(ErrorMessage = "Instructor Name is required")]
