@@ -7,9 +7,13 @@
 
 <h2>@ViewBag.Title</h2>
 
+@if (Request.IsAuthenticated && User.IsInRole("Admin"))
+{
 <p>
     <a href="@Url.Action("Create", "Students")">Add New Student</a>
 </p>
+}
+
 <table class="table">
     <tr>
 
@@ -88,9 +92,12 @@
             @Html.DisplayFor(modelItem => item.StudentStatus.SSName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) |
             @Html.ActionLink("Details", "Details", new { id = item.StudentId }) |
+            @if (Request.IsAuthenticated && User.IsInRole("Admin")) { 
+            @Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) @:|
+
             @Html.ActionLink("Delete", "Delete", new { id = item.StudentId })
+            }
         </td>
     </tr>
 }

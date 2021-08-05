@@ -15,12 +15,14 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
         private SchedulingAdminToolEntities db = new SchedulingAdminToolEntities();
 
         // GET: StudentStatus
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             return View(db.StudentStatuses.ToList());
         }
 
         // GET: StudentStatus/Details/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,6 +38,7 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
         }
 
         // GET: StudentStatus/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -46,6 +49,7 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "SSID,SSName,SSDescription")] StudentStatus studentStatus)
         {
             if (ModelState.IsValid)
@@ -59,6 +63,7 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
         }
 
         // GET: StudentStatus/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,6 +83,7 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "SSID,SSName,SSDescription")] StudentStatus studentStatus)
         {
             if (ModelState.IsValid)
@@ -90,6 +96,7 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
         }
 
         // GET: StudentStatus/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -107,6 +114,7 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
         // POST: StudentStatus/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             StudentStatus studentStatus = db.StudentStatuses.Find(id);
