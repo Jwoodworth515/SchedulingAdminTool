@@ -15,6 +15,8 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
         private SchedulingAdminToolEntities db = new SchedulingAdminToolEntities();
 
         // GET: Students
+        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Scheduling")]
         public ActionResult Index()
         {
             var students = db.Students.Include(s => s.StudentStatus);
@@ -22,6 +24,8 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
         }
 
         // GET: Students/Details/5
+        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Scheduling")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +41,7 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
         }
 
         // GET: Students/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName");
@@ -48,6 +53,7 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "StudentId,FirstName,LastName,Major,Address,City,State,ZipCode,Phone,Email,PhotoUrl,SSID")] Student student)
         {
             if (ModelState.IsValid)
@@ -62,6 +68,7 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
         }
 
         // GET: Students/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -82,6 +89,7 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "StudentId,FirstName,LastName,Major,Address,City,State,ZipCode,Phone,Email,PhotoUrl,SSID")] Student student)
         {
             if (ModelState.IsValid)
@@ -95,6 +103,7 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
         }
 
         // GET: Students/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -112,6 +121,7 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
         // POST: Students/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             Student student = db.Students.Find(id);
