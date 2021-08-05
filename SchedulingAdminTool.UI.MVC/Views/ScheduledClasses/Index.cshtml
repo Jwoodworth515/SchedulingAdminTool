@@ -56,7 +56,10 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ScheduleClassId }) |
             @Html.ActionLink("Details", "Details", new { id=item.ScheduleClassId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ScheduleClassId })
+            @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+            {
+            @Html.ActionLink("Delete", "Delete", new { id = item.ScheduleClassId })
+            }
         </td>
     </tr>
 }
