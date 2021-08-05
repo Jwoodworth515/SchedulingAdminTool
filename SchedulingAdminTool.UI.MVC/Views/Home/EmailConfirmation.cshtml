@@ -1,0 +1,60 @@
+﻿@model SchedulingAdminTool.UI.MVC.Models.ContactViewModel
+
+@{
+    ViewBag.Title = "EmailConfirmation";
+}
+
+<div class="container col-md-12 text-center">
+    <h2>@ViewBag.Title</h2>
+
+
+    <h4>We received the following message: </h4>
+    <p>@Model.Message</p>
+    <h4>We will respond as soon as we can to @Model.Email  . Thank you for contacting Upside Down University!</h4>
+    @*<img src="" height="600" width="500" />*@
+</div>
+
+@*<h2>EmailConfirmation</h2>
+
+<div>
+    <h4>ContactViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+
+    </dl>
+</div>*@
+@*<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@
