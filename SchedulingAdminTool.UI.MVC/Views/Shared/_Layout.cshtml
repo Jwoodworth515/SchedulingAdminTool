@@ -115,18 +115,18 @@
                             <a href="@Url.Action("Contact","Home")">Contact</a>
                         </li>
 
-                        @if (Request.IsAuthenticated && User.IsInRole("Scheduling") || User.IsInRole("Admin")) 
-                        { 
+                        @if (Request.IsAuthenticated && User.IsInRole("Scheduling") || User.IsInRole("Admin"))
+                        {
 
                             <li>
                                 <a href="@Url.Action("Index", "Enrollments")">Enrollments</a>
                             </li>
-                        <li>
-                            <a href="@Url.Action("Index", "ScheduledClasses")">Scheduled Classes</a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Index", "Students")">Students</a>
-                        </li>
+                            <li>
+                                <a href="@Url.Action("Index", "ScheduledClasses")">Scheduled Classes</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Index", "Students")">Students</a>
+                            </li>
                         }
 
                         @if (Request.IsAuthenticated && User.IsInRole("Admin"))
@@ -136,6 +136,12 @@
                             </li>
                             <li>
                                 <a href="@Url.Action("Index", "StudentStatus")">Student Status</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Index", "UsersAdmin")">Users</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Index", "RolesAdmin")">Roles</a>
                             </li>
                         }
 
