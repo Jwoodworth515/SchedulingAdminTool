@@ -104,13 +104,14 @@
         <div class="container">
             <div class="row">
                 <div class="main-menu">
+
                     <ul>
                         <li>
                             <a href="@Url.Action("Index","Home")">Home</a>
                         </li>
-                        <li>
+                        @*<li>
                             <a href="@Url.Action("About","Home")">About</a>
-                        </li>
+                        </li>*@
                         <li>
                             <a href="@Url.Action("Contact","Home")">Contact</a>
                         </li>
@@ -143,10 +144,14 @@
                             <li>
                                 <a href="@Url.Action("Index", "RolesAdmin")">Roles</a>
                             </li>
-                        }
 
-                        @Html.Partial("_LoginPartial")
+                        }
                     </ul>
+                    <div>
+                        @Html.Partial("_LoginPartial")
+                    </div>
+
+
                     <p>Survival Musts for the developer in the Centriq Upside Down.</p>
                 </div>
             </div>
