@@ -83,12 +83,12 @@
             @Html.DisplayFor(model => model.Email)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.PhotoUrl)
-        </dt>
+        </dt>*@
 
         <dd>
-            @Html.DisplayFor(model => model.PhotoUrl)
+            <img src="~/Content/img/@Model.PhotoUrl" alt="@Model.FirstName" title="@Model.FirstName" />
         </dd>
 
         <dt>
