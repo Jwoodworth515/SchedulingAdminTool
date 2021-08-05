@@ -114,21 +114,31 @@
                         <li>
                             <a href="@Url.Action("Contact","Home")">Contact</a>
                         </li>
-                        <li>
-                            <a href="@Url.Action("Index", "Courses")">Courses</a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Index", "Enrollments")">Enrollments</a>
-                        </li>
+
+                        @if (Request.IsAuthenticated && User.IsInRole("Scheduling") || User.IsInRole("Admin")) 
+                        { 
+
+                            <li>
+                                <a href="@Url.Action("Index", "Enrollments")">Enrollments</a>
+                            </li>
                         <li>
                             <a href="@Url.Action("Index", "ScheduledClasses")">Scheduled Classes</a>
                         </li>
                         <li>
                             <a href="@Url.Action("Index", "Students")">Students</a>
                         </li>
-                        <li>
-                            <a href="@Url.Action("Index", "StudentStatus")">Student Status</a>
-                        </li>
+                        }
+
+                        @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                        {
+                            <li>
+                                <a href="@Url.Action("Index", "Courses")">Courses</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Index", "StudentStatus")">Student Status</a>
+                            </li>
+                        }
+
                         @Html.Partial("_LoginPartial")
                     </ul>
                     <p>Survival Musts for the developer in the Centriq Upside Down.</p>
