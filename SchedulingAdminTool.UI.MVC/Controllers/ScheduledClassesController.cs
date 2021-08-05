@@ -15,8 +15,7 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
         private SchedulingAdminToolEntities db = new SchedulingAdminToolEntities();
 
         // GET: ScheduledClasses
-        [Authorize(Roles = "Admin")]
-        [Authorize(Roles = "Scheduling")]
+        [Authorize(Roles = "Admin, Scheduling")]
         public ActionResult Index()
         {
             var scheduledClasses = db.ScheduledClasses.Include(s => s.Course).Include(s => s.ScheduledClassStatus);
@@ -24,8 +23,8 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
         }
 
         // GET: ScheduledClasses/Details/5
-        [Authorize(Roles = "Admin")]
-        [Authorize(Roles = "Scheduling")]
+        [Authorize(Roles = "Admin, Scheduling")]
+
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -41,8 +40,8 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
         }
 
         // GET: ScheduledClasses/Create
-        [Authorize(Roles = "Admin")]
-        [Authorize(Roles = "Scheduling")]
+        [Authorize(Roles = "Admin, Scheduling")]
+
         public ActionResult Create()
         {
             ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "CourseName");
@@ -55,8 +54,8 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin")]
-        [Authorize(Roles = "Scheduling")]
+        [Authorize(Roles = "Admin, Scheduling")]
+
         public ActionResult Create([Bind(Include = "ScheduleClassId,CourseId,StartDate,EndDate,InstructorName,Location,SCSID")] ScheduledClass scheduledClass)
         {
             if (ModelState.IsValid)
@@ -72,8 +71,8 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
         }
 
         // GET: ScheduledClasses/Edit/5
-        [Authorize(Roles = "Admin")]
-        [Authorize(Roles = "Scheduling")]
+        [Authorize(Roles = "Admin, Scheduling")]
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -95,8 +94,8 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin")]
-        [Authorize(Roles = "Scheduling")]
+        [Authorize(Roles = "Admin, Scheduling")]
+
         public ActionResult Edit([Bind(Include = "ScheduleClassId,CourseId,StartDate,EndDate,InstructorName,Location,SCSID")] ScheduledClass scheduledClass)
         {
             if (ModelState.IsValid)
