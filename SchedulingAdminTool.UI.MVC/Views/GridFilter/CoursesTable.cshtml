@@ -9,77 +9,79 @@
 <br />
 <br />
 
+<div class="container">
 
-<h2>CoursesTable</h2>
+    <h2>CoursesTable</h2>
 
-@*<p>
-    @Html.ActionLink("Create New", "Courses")
-</p>*@
+    @*<p>
+            @Html.ActionLink("Create New", "Courses")
+        </p>*@
 
-<p>
-    <a href="@Url.Action("CoursesGrid", "GridFilter")" class="pull-right btn btn-success">Grid View</a>
-</p>
+    <p>
+        <a href="@Url.Action("CoursesGrid", "GridFilter")" class="pull-right btn btn-success">Grid View</a>
+    </p>
 
-<table class="table" id="data-table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CourseName)
-            </th>
-            @*<th>
-                    @Html.DisplayNameFor(model => model.CourseDescription)
-                </th>*@
-            <th>
-                @Html.DisplayNameFor(model => model.CreditHours)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Curriculum)
-            </th>
-            @*<th>
-                    @Html.DisplayNameFor(model => model.Notes)
-                </th>*@
-            <th>
-                @Html.DisplayNameFor(model => model.IsActive)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-
-    <tbody>
-        @foreach (var item in Model)
-        {
+    <table class="table" id="data-table">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CourseName)
-                </td>
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.CourseDescription)
-                    </td>*@
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreditHours)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Curriculum)
-                </td>
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.Notes)
-                    </td>*@
-                <td>
-                    @Html.DisplayFor(modelItem => item.IsActive)
-                </td>
-                <td>
-                    @*@Html.ActionLink("Edit", "Edit", new { id = item.CourseId }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.CourseId }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.CourseId })*@
-                    <a href="@Url.Action("Details", "Courses", new { id = item.CourseId })">
-                        Details
-                    </a>
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.CourseName)
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.CourseDescription)
+                    </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.CreditHours)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Curriculum)
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.Notes)
+                    </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.IsActive)
+                </th>
+                <th></th>
             </tr>
-        }
-    </tbody>
+        </thead>
 
-</table>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CourseName)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.CourseDescription)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreditHours)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Curriculum)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Notes)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsActive)
+                    </td>
+                    <td>
+                        @*@Html.ActionLink("Edit", "Edit", new { id = item.CourseId }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.CourseId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.CourseId })*@
+                        <a href="@Url.Action("Details", "Courses", new { id = item.CourseId })">
+                            Details
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
 
 @section scripts{
     <script>

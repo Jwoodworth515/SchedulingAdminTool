@@ -5,52 +5,58 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@ViewBag.Title</h2>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="container">
+    <h2>@ViewBag.Title</h2>
 
 
 
-<p>
-    <a href="@Url.Action("Index", "StudentStatus")" class="pull-right btn btn-success">Table View</a>
-</p>
+    <p>
+        <a href="@Url.Action("Index", "StudentStatus")" class="pull-right btn btn-success">Table View</a>
+    </p>
 
-<p>
-    @Url.Action("Create", "StudentStatus")
-</p>
-<section class="studentStatusesGrid">
-    <div class="col-md-12">
-        @foreach (var studentStatus in ViewBag.StudentStatuses)
-        {
-            string name = studentStatus;
-            //if (!(studentStatus.IndexOf(' ') < 0))
-            //{
-            //    name = studentStatus.Substring(0, studentStatus.IndexOf(' '));
-            //}
-            <button class="button btn-danger" id="studentStatus-@studentStatus" onclick="filter('@name')">@studentStatus</button>
-        }
-    </div>
+    @*<p>
+        @Url.Action("Create", "StudentStatus")
+    </p>*@
+    <section class="studentStatusesGrid">
+        <div class="col-md-12">
+            @foreach (var studentStatus in ViewBag.StudentStatuses)
+            {
+                string name = studentStatus;
+                //if (!(studentStatus.IndexOf(' ') < 0))
+                //{
+                //    name = studentStatus.Substring(0, studentStatus.IndexOf(' '));
+                //}
+                <button class="button btn-danger" id="studentStatus-@studentStatus" onclick="filter('@name')">@studentStatus</button>
+            }
+        </div>
 
-    @*<section id="studentStatusesGrid">*@
+        @*<section id="studentStatusesGrid">*@
 
-    <div class="row">
-        @foreach (var item in Model)
-        {
-            <div class="col-md-8 col-sm-1 col-xs-1 col-offset-2 @(item.SSName) studentStatus">
-                <div class="course">
-                    @*<a href="@Url.Action("Details", "StudentStatus", new { id = item.SSID })" class="course-img">
-                    </a>*@
-                    <a class="course-title" href="@Url.Action("Details", "StudentStatus", new { id = item.SSID})">
-                        @item.SSName
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-8 col-sm-1 col-xs-1 col-offset-2 @(item.SSName) studentStatus">
+                    <div class="course">
+                        @*<a href="@Url.Action("Details", "StudentStatus", new { id = item.SSID })" class="course-img">
+                            </a>*@
+                        <a class="course-title" href="@Url.Action("Details", "StudentStatus", new { id = item.SSID})">
+                            @item.SSName
 
-                    </a>
-                    <span class="course-price course-free course-details">
-                        @Html.DisplayFor(modelItem => item.SSDescription)
+                        </a>
+                        <span class="course-price course-free course-details">
+                            @Html.DisplayFor(modelItem => item.SSDescription)
 
-                    </span>
+                        </span>
+                    </div>
                 </div>
-            </div>
-        }
-    </div>
-</section>
+            }
+        </div>
+    </section>
+</div>
 
 <script>
     function filter(studentStatus) {
