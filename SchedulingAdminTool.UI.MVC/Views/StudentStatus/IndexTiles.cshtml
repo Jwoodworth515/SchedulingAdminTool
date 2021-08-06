@@ -1,0 +1,96 @@
+﻿@model IEnumerable<SchedulingAdminTool.DATA.EF.StudentStatus>
+
+@{
+    ViewBag.Title = "Index Tiles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+
+<p>
+    <a href="@Url.Action("Index", "StudentStatus")" class="pull-right btn btn-success">Table View</a>
+</p>
+
+<p>
+    @Url.Action("Create", "StudentStatus")
+</p>
+<section class="studentStatusesGrid">
+    <div class="col-md-12">
+        @foreach (var studentStatus in ViewBag.StudentStatuses)
+        {
+            string name = studentStatus;
+            //if (!(studentStatus.IndexOf(' ') < 0))
+            //{
+            //    name = studentStatus.Substring(0, studentStatus.IndexOf(' '));
+            //}
+            <button class="button btn-danger" id="studentStatus-@studentStatus" onclick="filter('@name')">@studentStatus</button>
+        }
+    </div>
+
+    @*<section id="studentStatusesGrid">*@
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-8 col-sm-1 col-xs-1 col-offset-2 @(item.SSName) studentStatus">
+                <div class="course">
+                    @*<a href="@Url.Action("Details", "StudentStatus", new { id = item.SSID })" class="course-img">
+                    </a>*@
+                    <a class="course-title" href="@Url.Action("Details", "StudentStatus", new { id = item.SSID})">
+                        @item.SSName
+
+                    </a>
+                    <span class="course-price course-free course-details">
+                        @Html.DisplayFor(modelItem => item.SSDescription)
+
+                    </span>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<script>
+    function filter(studentStatus) {
+        $('#studentStatusesGrid').each(function () {
+            if (!$(this).hasClass(category)) {
+                $(this).hide();
+            }
+            else {
+                $(this).show();
+            }
+        });
+    }
+</script>
+
+
+
+
+
+@*</table>*@
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SSName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SSDescription)
+        </th>
+        <th></th>
+    </tr>*@
+@*<tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SSName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SSDescription)
+        </td>
+        <td>
+
+            <a href="@Url.Action("Details", "StudentStatus", new { id = item.SSID })">
+                Details
+            </a>
+        </td>
+    </tr>*@
