@@ -48,12 +48,19 @@
     <footer>
         <div class="container-fluid">
             <div class="col-md-12">
-                <p>
+                <div class="text-center">
+                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        <div class="text-center">
+                            <h4 style="font-size: x-large">
+                                <a href="~/Content/UpsideDownUniversity.pdf" target="_blank">View Project Documentation</a>
+                            </h4>
+                        </div>
 
+                    }
                     Copyright &copy; 2021 Jacob Woodworth & Danielle Smalley
-
                     @*| Designed by TemplateMo*@
-                </p>
+                </div>
             </div>
         </div>
     </footer>
@@ -116,8 +123,8 @@
                             <a href="@Url.Action("Index","Home")">Home</a>
                         </li>
                         @*<li>
-                            <a href="@Url.Action("About","Home")">About</a>
-                        </li>*@
+                                <a href="@Url.Action("About","Home")">About</a>
+                            </li>*@
                         <li>
                             <a href="@Url.Action("Contact","Home")">Contact</a>
                         </li>
