@@ -40,5 +40,7 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
             //List<Course> courses = db.Courses.Include(b => b.IsActive).ToList();
             //return View(courses);
         }
+
+
     }
 }
