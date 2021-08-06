@@ -12,35 +12,58 @@
 
 <h2>@ViewBag.Title</h2>
 
+
 <p>
-    <a href="@Url.Action("Create", "StudentStatus")">Add New Student Status</a>
+    <a href="@Url.Action("IndexTiles", "StudentStatus")" class="pull-right btn btn-success">Grid View</a>
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.SSName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SSDescription)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+@*<p>
+    <a href="@Url.Action("Create", "StudentStatus")">Add New Student Status</a>
+</p>*@
+<table class="table" id="data-table">
+    <thead>
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.SSName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SSDescription)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.SSID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.SSID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.SSID })
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.SSName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SSDescription)
+            </th>
+            <th></th>
         </tr>
-    }
-
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SSName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SSDescription)
+                </td>
+                <td>
+                    <a href="@Url.Action("Details", "StudentStatus", new { id = item.SSID })">
+                        Details |
+                    </a>
+                    <a href="@Url.Action("Edit", "StudentStatus", new { id = item.SSID })">
+                        Edit |
+                    </a>
+                    <a href="@Url.Action("Delete", "StudentStatus", new { id = item.SSID })">
+                        Delete
+                    </a>
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.SSID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.SSID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.SSID })*@
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#data-table').DataTable();
+        });
+    </script>
+}

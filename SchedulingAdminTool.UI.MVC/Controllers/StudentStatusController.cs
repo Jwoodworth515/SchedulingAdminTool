@@ -7,6 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SchedulingAdminTool.DATA.EF;
+using SchedulingAdminTool.UI.MVC.Controllers;
+
+
 
 namespace SchedulingAdminTool.UI.MVC.Controllers
 {
@@ -14,9 +17,29 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
     {
         private SchedulingAdminToolEntities db = new SchedulingAdminToolEntities();
 
+        [Authorize(Roles = "Admin")]
+        public ActionResult IndexTiles() //this is going to be for the grid (tiles)
+        {
+
+            
+                //ViewBag.Guitar = db.Guitars.Select(x => x.GuitarID).ToList();
+                //ViewBag.Brands = db.Brands.Select(x => x.BrandName).ToList();
+
+                //List<Guitar> guitars = db.Guitars.Include(b => b.Guitar_Category).ToList();
+                //return View(guitars);
+            
+
+            ViewBag.StudentStatuses = db.StudentStatuses.Select(x => x.SSName).ToList();
+            ViewBag.Students = db.Students.Select(x => x.FirstName).ToList();
+
+            List<StudentStatus> studentStatuses = db.StudentStatuses.Include(s => s.Students).ToList();
+            //List<Student> students = db.Students.Include(s => s.FirstName).Include(s => s.LastName).ToList();
+            return View(studentStatuses);
+        }
+
         // GET: StudentStatus
         [Authorize(Roles = "Admin")]
-        public ActionResult Index()
+        public ActionResult Index() //this is where the "normal" index view is - where we'll put table view
         {
             return View(db.StudentStatuses.ToList());
         }
