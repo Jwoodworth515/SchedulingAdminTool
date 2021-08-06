@@ -1,11 +1,17 @@
 ﻿@model SchedulingAdminTool.UI.MVC.Models.LoginViewModel
 
-@{
+@*@{
     ViewBag.Title = "Log in";
-}
+}*@
 
-<h2>@ViewBag.Title.</h2>
+
+@*<h2>@ViewBag.Title</h2>*@
 <div class="row">
+    <div class="container">
+    <br />
+    <br />
+    <br />
+    <br />
     <div class="col-md-8">
         <section id="loginForm">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" })) {
@@ -55,6 +61,7 @@
         </section>
     </div>
 </div>
+    </div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
