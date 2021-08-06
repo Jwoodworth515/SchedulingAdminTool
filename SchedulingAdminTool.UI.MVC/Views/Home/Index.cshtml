@@ -2,15 +2,27 @@
     <div class="video-overlay"></div>
     <div class="video-content">
         @*<div class="inner">
-            <h1>Welcome to <em>Highway</em></h1>
-            <p>FREE CSS TEMPLATE by templatemo</p>
-            <p>Homepage with full-width image gallery</p>
-            <div class="scroll-icon">
-                <a class="scrollTo" data-scrollTo="portfolio" href="#"><img src="img/scroll-icon.png" alt=""></a>
-            </div>
-        </div>*@
+                <h1>Welcome to <em>Highway</em></h1>
+                <p>FREE CSS TEMPLATE by templatemo</p>
+                <p>Homepage with full-width image gallery</p>
+                <div class="scroll-icon">
+                    <a class="scrollTo" data-scrollTo="portfolio" href="#"><img src="img/scroll-icon.png" alt=""></a>
+                </div>
+            </div>*@
     </div>
-    <video autoplay="" loop="">
+    <video autoplay="" loop="" muted>
         <source src="~/strange-video.mp4" type="video/mp4" />
     </video>
+
 </div>
+
+@if (Request.IsAuthenticated && User.IsInRole("Admin"))
+{
+    <div class="text-center">
+        <h4 style="font-size: x-large">
+            <a href="~/Content/UpsideDownUniversity.pdf" target="_blank">View Project Documentation</a>
+        </h4>
+    </div>
+
+}
+
