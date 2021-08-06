@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\EnrollmentsController.cs" />
+    <Compile Include="Controllers\GridFilterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RolesAdminController.cs" />
@@ -359,6 +360,9 @@
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
     <Content Include="Content\img\18370b28-2098-4300-bcc1-12d03b07d41e.JPG" />
+    <Content Include="Content\img\BackgroundAbstract.jpg" />
+    <Content Include="Content\img\BackgroundAbstract2.jpg" />
+    <Content Include="Content\img\BackgroundAbstract3.jpg" />
     <Content Include="Content\img\noimage.png" />
     <Content Include="fonts\fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\fonts\glyphicons-halflings-regular.svg" />
@@ -666,6 +670,8 @@
     <Content Include="Views\StudentStatus\Index.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\EmailConfirmation.cshtml" />
+    <Content Include="Views\GridFilter\CoursesTable.cshtml" />
+    <Content Include="Views\GridFilter\CoursesGrid.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -22,6 +22,11 @@
 
     <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Carter+One&family=Crete+Round:ital@1&family=Cuprum:wght@600&family=Playball&family=Tourney:wght@700&family=Yellowtail&display=swap" rel="stylesheet">
+
+
     @Styles.Render("~/Content/css")
 
     @*<script src="~/Scripts/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>*@
@@ -133,7 +138,7 @@
                         @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                         {
                             <li>
-                                <a href="@Url.Action("Index", "Courses")">Courses</a>
+                                <a href="@Url.Action("CoursesTable", "GridFilter")">Courses</a>
                             </li>
                             <li>
                                 <a href="@Url.Action("Index", "StudentStatus")">Student Status</a>

@@ -1,0 +1,245 @@
+﻿@model IEnumerable<SchedulingAdminTool.DATA.EF.Course>
+
+@{
+    ViewBag.Title = "CoursesGrid";
+}
+
+<br />
+<br />
+<br />
+<br />
+
+<h2>CoursesGrid</h2>
+
+<p>
+    <a href="@Url.Action("Details", "Courses")">Table View</a>
+</p>
+
+<div>
+    <section id="coursesGrid">
+        <div>
+            <div class="col-md-12 text-center">
+                @foreach (var isActive in ViewBag.Courses)
+                {
+                    string name = isActive;
+                    if (!(isActive.IndexOf(' ') < 0))
+                    {
+                        name = isActive.Substring(0, isActive.IndexOf(' '));
+                    }
+                    <button class="btn btn-danger" id="isActive-@isActive" onclick="filter('@name')">@isActive</button>
+                }
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-2 @(item.CourseName) course">
+                    @*<a href="@Url.Action("Details", "Guitars", new { id = item.GuitarID })" class="course-img">
+                            <img src="~/Content/images/Guitars/t_@item.GuitarImage" alt="@item.GuitarModel" />
+                        </a>*@
+                </div>
+            }
+        </div>
+    </section>
+</div>
+
+@section scripts{
+    <script>
+        function filter(isActive) {
+            $('#coursesGrid div.course').each(function () {
+                if (!$(this).hasClass(course)) {
+                    $(this).hide();
+                }
+                else {
+                    $(this).show();
+                }
+            });
+        }
+    </script>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<p>
+        @Html.ActionLink("Create New", "Courses")
+    </p>
+
+    <div class="col-md-12">
+        @foreach (var isActive in ViewBag.Courses)
+        {
+            string name = isActive;
+            if (!(isActive.IndexOf(' ') < 0))
+            {
+                name = isActive.Substring(0, isActive.IndexOf(' '));
+            }
+            <button class="btn btn-danger" id="isActive-@isActive" onclick="filter('@name')">@isActive</button>
+        }
+    </div>
+
+    <section id="courseGrid">
+
+        @foreach (var item in Model)
+        {
+
+            <div class="col-md-8 col-sm-1 col-xs-1 col-offset-2 @(item.CourseName) course">
+                <div>
+                    <a href="@Url.Action("Details", "Courses", new { id = item.CourseId })" class="course-img">*@
+@*<img src="~/Content/img/product/@item.Image" alt="@item.ProductName" />
+    <i class="course-link-icon fa fa-link"></i>*@
+@*</a>
+                    <a class="course-title" href="@Url.Action("Details", "Courses", new { id = item.CourseId})">
+                        @item.CourseName
+
+                    </a>
+                    <span class="course-price course-free course-details">
+                        @Html.DisplayFor(modelItem => item.CreditHours)
+                    </span>
+
+                </div>
+            </div>
+
+        }
+    </section>*@
+
+@*@section scripts{
+        <script>
+            function filter(isActive) {
+                $('#coursesGrid div.course').each(function () {
+                    if (!$(this).hasClass(course)) {
+                        $(this).hide();
+                    }
+                    else {
+                        $(this).show();
+                    }
+                });
+            }
+        </script>
+    }*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreditHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Curriculum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th></th>
+    </tr>*@
+
+
+
+@*@<div class="course-details">
+    @if (item.ProductCategory != null)
+    {
+        @<span class="course-category">
+            @Html.DisplayFor(modelItem => item.ProductCategory.CategoryName)
+        </span>*@
+
+@*<tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreditHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Curriculum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Notes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CourseId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CourseId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CourseId })
+        </td>
+    </tr>*@
