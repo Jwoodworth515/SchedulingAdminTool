@@ -29,14 +29,16 @@ namespace SchedulingAdminTool.UI.MVC
                       "~/Content/css/bootstrap-theme.min.css",
                       "~/Content/css/fontAwesome.css",
                       "~/Content/css/light-box.css",
-                      "~/Content/css/templatemo-style.css"));
+                      "~/Content/css/templatemo-style.css",
+                      "~/Content/DataTables/css/jquery.dataTables.min.css"));
 
 
             bundles.Add(new ScriptBundle("~/bundles/template").Include(
                 "~/Scripts/js/main.js",
                 "~/Scripts/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js",
                 "~/Scripts/js/vendor/bootstrap.min.js",
-                "~/Scripts/js/plugins.js"));
+                "~/Scripts/js/plugins.js",
+                "~/Scripts/dataTables/jquery.dataTables.min.js"));
 
         }
     }
