@@ -5,23 +5,31 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<br />
+<br />
+<br />
+<br />
 
-<div>
-    <h4>ScheduledClassStatus</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.SCSName)
-        </dt>
+<div class="container">
 
-        <dd>
-            @Html.DisplayFor(model => model.SCSName)
-        </dd>
+    <h2>Details</h2>
 
-    </dl>
+    <div>
+        <h4>ScheduledClassStatus</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.SCSName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SCSName)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.SCSID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.SCSID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

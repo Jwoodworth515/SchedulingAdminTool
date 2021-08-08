@@ -9,38 +9,41 @@
 <br />
 <br />
 
-<h2>CoursesGrid</h2>
+<div class="container">
 
-<p>
-    <a href="@Url.Action("Details", "Courses")">Table View</a>
-</p>
+    <h2>CoursesGrid</h2>
 
-<div>
-    <section id="coursesGrid">
-        <div>
-            <div class="col-md-12 text-center">
-                @foreach (var isActive in ViewBag.Courses)
-                {
-                    string name = isActive;
-                    if (!(isActive.IndexOf(' ') < 0))
+    <p>
+        <a href="@Url.Action("Details", "Courses")">Table View</a>
+    </p>
+
+    <div>
+        <section id="coursesGrid">
+            <div>
+                <div class="col-md-12 text-center">
+                    @foreach (var isActive in ViewBag.Courses)
                     {
-                        name = isActive.Substring(0, isActive.IndexOf(' '));
+                        string name = isActive;
+                        if (!(isActive.IndexOf(' ') < 0))
+                        {
+                            name = isActive.Substring(0, isActive.IndexOf(' '));
+                        }
+                        <button class="btn btn-danger" id="isActive-@isActive" onclick="filter('@name')">@isActive</button>
                     }
-                    <button class="btn btn-danger" id="isActive-@isActive" onclick="filter('@name')">@isActive</button>
+                </div>
+            </div>
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-2 @(item.CourseName) course">
+                        @*<a href="@Url.Action("Details", "Guitars", new { id = item.GuitarID })" class="course-img">
+                                <img src="~/Content/images/Guitars/t_@item.GuitarImage" alt="@item.GuitarModel" />
+                            </a>*@
+                    </div>
                 }
             </div>
-        </div>
-        <div class="row">
-            @foreach (var item in Model)
-            {
-                <div class="col-md-2 @(item.CourseName) course">
-                    @*<a href="@Url.Action("Details", "Guitars", new { id = item.GuitarID })" class="course-img">
-                            <img src="~/Content/images/Guitars/t_@item.GuitarImage" alt="@item.GuitarModel" />
-                        </a>*@
-                </div>
-            }
-        </div>
-    </section>
+        </section>
+    </div>
 </div>
 
 @section scripts{
