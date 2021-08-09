@@ -9,41 +9,38 @@
 <br />
 <br />
 
-<div class="container">
+<h2>CoursesGrid</h2>
 
-    <h2>CoursesGrid</h2>
+<p>
+    <a href="@Url.Action("Details", "Courses")">Table View</a>
+</p>
 
-    <p>
-        <a href="@Url.Action("Details", "Courses")">Table View</a>
-    </p>
-
-    <div>
-        <section id="coursesGrid">
-            <div>
-                <div class="col-md-12 text-center">
-                    @foreach (var isActive in ViewBag.Courses)
-                    {
-                        string name = isActive;
-                        if (!(isActive.IndexOf(' ') < 0))
-                        {
-                            name = isActive.Substring(0, isActive.IndexOf(' '));
-                        }
-                        <button class="btn btn-danger" id="isActive-@isActive" onclick="filter('@name')">@isActive</button>
-                    }
-                </div>
-            </div>
-            <div class="row">
-                @foreach (var item in Model)
+<div>
+    <section id="coursesGrid">
+        <div>
+            <div class="col-md-12 text-center">
+                @foreach (var isActive in ViewBag.Courses)
                 {
-                    <div class="col-md-2 @(item.CourseName) course">
-                        @*<a href="@Url.Action("Details", "Guitars", new { id = item.GuitarID })" class="course-img">
-                                <img src="~/Content/images/Guitars/t_@item.GuitarImage" alt="@item.GuitarModel" />
-                            </a>*@
-                    </div>
+                    string name = isActive;
+                    if (!(isActive.IndexOf(' ') < 0))
+                    {
+                        name = isActive.Substring(0, isActive.IndexOf(' '));
+                    }
+                    <button class="btn btn-danger" id="isActive-@isActive" onclick="filter('@name')">@isActive</button>
                 }
             </div>
-        </section>
-    </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-2 @(item.CourseName) course">
+                    @*<a href="@Url.Action("Details", "Guitars", new { id = item.GuitarID })" class="course-img">
+                            <img src="~/Content/images/Guitars/t_@item.GuitarImage" alt="@item.GuitarModel" />
+                        </a>*@
+                </div>
+            }
+        </div>
+    </section>
 </div>
 
 @section scripts{

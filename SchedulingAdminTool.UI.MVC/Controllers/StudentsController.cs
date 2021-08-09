@@ -173,10 +173,10 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
 
 
                 db.Entry(student).State = EntityState.Modified;
-            db.SaveChanges();
-            return RedirectToAction("Index");
+                db.SaveChanges();
+                return RedirectToAction("Index");
 
-        }
+            }
             ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName", student.SSID);
             return View(student);
         }
@@ -223,4 +223,3 @@ namespace SchedulingAdminTool.UI.MVC.Controllers
         }
     }
 }
-
