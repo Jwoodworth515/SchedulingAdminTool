@@ -7,8 +7,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SchedulingAdminTool.DATA.EF/*.SchedulingAdminToolMetadata*/
 {
-    class SchedulingAdminToolMetadata
-    {
 
         #region CourseMetadata
 
@@ -218,5 +216,4 @@ namespace SchedulingAdminTool.DATA.EF/*.SchedulingAdminToolMetadata*/
         }
 
         #endregion
-    }
 }
