@@ -350,4 +350,4 @@ MigrationBackup/
 .ionide/
 
 # Prevent Sensitive data from being submitted 
-/SchedulingAdminTool.UI.MVC/configs
+/SchedulingAdminTool.UI.MVC/configs/
